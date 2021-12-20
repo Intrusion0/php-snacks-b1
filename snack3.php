@@ -5,6 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snack 3</title>
+    <style>
+
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        div {
+            margin: 10px 0;
+            font-weight: 600;
+            font-size: 25px;
+        }
+        span {
+            display: block;
+            font-weight: 400;
+            font-size: 20px;
+        }
+
+        h2 {
+            font-size: 30px;
+        }
+    </style>
     <?php
 
     // Snack#3
@@ -14,7 +36,13 @@
 
     --DONE  1. Creo l'array di array => $posts = [ 'x' => ['y' => 'z'] ];
     --DONE  2. Creo un ciclo che scorre all'interno dell'array principale => for ($i = 0; $i < count($posts); $i++);
-        --DONE  2.1 
+        --DONE  2.1 Mi trovo le chiavi tramite => array_keys($posts);
+        --DONE  2.2 Stampo la chiave che indica la data => echo '<h2>' . $key . '</h2><br>';
+    --DONE  3. Successivamente creo un ciclo che mi scorre all'interno dell'array che contiene il post => for ($j = 0; $j < count($value) ; $j++)
+        --DONE  3.1 Mi trovo le chiavi anche qui con => array_keys($keyPost);
+    --DONE  4. Una volta trovate le chiavi all'interno dell'ultimo array, mi estrapolo il valore tramite un altro ciclo => for ($a = 0; $a < count($valuePost); $a++)
+        --DONE 4.1 Una volta estrapolato la chiave mi stampo il contenuto => $details = $keyPost[$nameKeyPost];
+        --DONE 4.2 Stampo il contenuto => echo '<span>' . $nameKeyPost . ': ' . $details . '</span><br>';
 
     */
 
@@ -27,31 +55,31 @@
             ],
             [
                 'title' => 'Post 2',
-                'author' => 'Michele Papagni',
+                'author' => 'Luca Bentiveglia',
                 'text' => 'Testo post 2'
             ],
         ],
         '10/02/2019' => [
             [
                 'title' => 'Post 3',
-                'author' => 'Michele Papagni',
+                'author' => 'Mario Lombardo',
                 'text' => 'Testo post 3'
             ]
         ],
         '15/05/2019' => [
             [
                 'title' => 'Post 4',
-                'author' => 'Michele Papagni',
+                'author' => 'Giovanni Rossi',
                 'text' => 'Testo post 4'
             ],
             [
                 'title' => 'Post 5',
-                'author' => 'Michele Papagni',
+                'author' => 'Vittorio Glorioso',
                 'text' => 'Testo post 5'
             ],
             [
                 'title' => 'Post 6',
-                'author' => 'Michele Papagni',
+                'author' => 'Filippo Mangione',
                 'text' => 'Testo post 6'
             ]
         ],
@@ -68,19 +96,25 @@
             for ($i = 0; $i < count($keys); $i++) { 
                 $key = $keys[$i];
                 $value = $posts[$key];
+                echo '<h2>' . $key . '</h2> <br>';
 
                 for ($j = 0; $j < count($value) ; $j++) { 
                     $keyPost = $value[$j];
-                    // echo $keyPost['title'];
-                    // echo $keyPost['author'];
-                    // echo $keyPost['text'];
-                    
+
+                    $valuePost = array_keys($keyPost);
+                    echo '<div>' . 'Post n: ' . $j + 1 . '</div> <br>';
+
+                    for ($a = 0; $a < count($valuePost); $a++) { 
+                        $nameKeyPost = $valuePost[$a];
+                        $details = $keyPost[$nameKeyPost];
+                        echo '<span>' . $nameKeyPost . ': ' . $details . '</span> <br>';
+                    }
                 }
 
-                echo $value . '<br>';
+                
                 
             }
-
+            
         ?>
     </div>
 </body>
