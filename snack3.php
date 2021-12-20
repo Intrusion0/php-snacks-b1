@@ -71,11 +71,14 @@
 
                 for ($j = 0; $j < count($value) ; $j++) { 
                     $keyPost = $value[$j];
+                    // echo $keyPost['title'];
+                    // echo $keyPost['author'];
+                    // echo $keyPost['text'];
                     
-                    echo $keyPost . ': ' . '<br>';
                 }
 
-                echo $key . ': ' . $value . '<br>';
+                echo $value . '<br>';
+                
             }
 
         ?>
