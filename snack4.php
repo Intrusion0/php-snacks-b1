@@ -40,7 +40,7 @@
 <body>
     
     <h1>15 numeri casuali univoci</h1>
-    
+
     <?php
 
         while (count($numRandom) < 15) {
@@ -52,7 +52,7 @@
         }
         
         for ($i = 0; $i < count($numRandom); $i++) { 
-            echo '<div>Numero ' . $i . ': <span>' . $numRandom[$i] . '</span>' . '</div><br>';
+            echo '<div>Numero ' . $i + 1 . ': <span>' . $numRandom[$i] . '</span>' . '</div><br>';
         }
 
     ?>
