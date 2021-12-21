@@ -31,7 +31,10 @@
            $newText = explode('.', $text);
            
             for ($i = 0; $i < count($newText); $i++) { 
-                echo '<p>' . $newText[$i] . '</p>';
+
+                if (strlen($newText[$i]) > 0) {
+                    echo '<p>' . $newText[$i] . '.</p>';
+                }
             }
 
         ?>
