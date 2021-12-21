@@ -19,7 +19,7 @@
 
     */
 
-    $text = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque quasi aliquid saepe et at, nulla voluptatum minima commodi consectetur eveniet ratione totam necessitatibus obcaecati unde, placeat doloremque vel soluta modi? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, facilis fugiat est, maiores hic rerum reprehenderit. voluptatibus molestiae culpa perspiciatis recusandae quasi expedita minima velit rem! Eius esse quos eveniet? Lorem ipsum, dolor sit amet consectetur. adipisicing elit. Ullam neque porro doloremque sapiente dolorum accusantium blanditiis voluptas aut fugiat iure optio aperiam nulla saepe provident, voluptatibus voluptate et quis doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe tempore voluptate placeat! Quibusdam unde eos magnam sint nisi architecto accusamus, quis vero culpa quod, quaerat modi delectus odit ut molestiae. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque quasi aliquid saepe et at, nulla voluptatum minima commodi consectetur eveniet ratione totam necessitatibus obcaecati unde, placeat doloremque vel soluta modi? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, facilis fugiat est, maiores hic rerum reprehenderit. voluptatibus molestiae culpa perspiciatis recusandae quasi expedita. minima velit rem! Eius esse quos eveniet? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam neque porro doloremque sapiente dolorum accusantium blanditiis voluptas aut fugiat iure optio aperiam nulla saepe provident, voluptatibus voluptate et quis doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe tempore voluptate placeat! Quibusdam unde eos magnam sint nisi architecto accusamus, quis vero culpa quod, quaerat modi delectus odit ut molestiae. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque quasi aliquid saepe et at, nulla voluptatum minima commodi consectetur eveniet ratione totam necessitatibus obcaecati unde, placeat doloremque vel soluta modi? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, facilis fugiat est, maiores hic rerum reprehenderit. voluptatibus molestiae culpa perspiciatis recusandae quasi expedita minima. velit rem! Eius esse quos eveniet? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam neque porro doloremque sapiente dolorum accusantium blanditiis voluptas aut fugiat iure optio aperiam nulla saepe provident, voluptatibus voluptate et quis doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe tempore voluptate placeat! Quibusdam unde eos magnam sint nisi architecto accusamus, quis vero culpa quod, quaerat modi delectus odit ut molestiae.'
+    $text = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque quasi aliquid saepe et at, nulla voluptatum minima commodi consectetur eveniet ratione totam necessitatibus obcaecati unde, placeat doloremque vel soluta modi? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, facilis fugiat est, maiores hic rerum reprehenderit. voluptatibus molestiae culpa perspiciatis recusandae quasi expedita minima velit rem! Eius esse quos eveniet? Lorem ipsum, dolor sit amet consectetur. adipisicing elit. Ullam neque porro doloremque sapiente dolorum accusantium blanditiis voluptas aut fugiat iure optio aperiam nulla saepe provident, voluptatibus voluptate et quis doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe tempore voluptate placeat! Quibusdam unde eos magnam sint nisi architecto accusamus, quis vero culpa quod, quaerat modi delectus odit ut molestiae. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque quasi aliquid saepe et at, nulla voluptatum minima commodi consectetur eveniet ratione totam necessitatibus obcaecati unde, placeat doloremque vel soluta modi? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, facilis fugiat est, maiores hic rerum reprehenderit. voluptatibus molestiae culpa perspiciatis recusandae quasi expedita. minima velit rem! Eius esse quos eveniet? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam neque porro doloremque sapiente dolorum accusantium blanditiis voluptas aut fugiat iure optio aperiam nulla saepe provident, voluptatibus voluptate et quis doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe tempore voluptate placeat! Quibusdam unde eos magnam sint nisi architecto accusamus, quis vero culpa quod, quaerat modi delectus odit ut molestiae. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque quasi aliquid saepe et at, nulla voluptatum minima commodi consectetur eveniet ratione totam necessitatibus obcaecati unde, placeat doloremque vel soluta modi? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, facilis fugiat est, maiores hic rerum reprehenderit. voluptatibus molestiae culpa perspiciatis recusandae quasi expedita minima. velit rem! Eius esse quos eveniet? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam neque porro doloremque sapiente dolorum accusantium blanditiis voluptas aut fugiat iure optio aperiam nulla saepe provident, voluptatibus voluptate et quis doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe tempore voluptate placeat! Quibusdam unde eos magnam sint nisi architecto accusamus, quis vero culpa quod, quaerat modi delectus odit ut molestiae.';
 
     ?>
 </head>
@@ -28,14 +28,28 @@
     <div>
         <?php
 
-           $newText = explode('.', $text);
+        //    $newText = explode('.', $text);
            
-            for ($i = 0; $i < count($newText); $i++) { 
+        //     for ($i = 0; $i < count($newText); $i++) { 
 
-                if (strlen($newText[$i]) > 0) {
-                    echo '<p>' . $newText[$i] . '.</p>';
-                }
-            }
+        //         if (strlen($newText[$i]) > 0) {
+        //             echo '<p>' . $newText[$i] . '.</p>';
+        //         }
+        //     }
+
+        ?>
+
+
+        <!--  con il ciclo ForEach -->
+
+        <?php
+        
+        $arrPar = explode('.', $text);
+
+        foreach ($arrPar as $newPar) {
+            echo '<p>' . $newPar . '</p>';
+        }
+            
 
         ?>
     </div>

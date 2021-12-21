@@ -60,21 +60,37 @@
 
     <?php
 
-        for ($i=0; $i < count($names); $i++) { 
+        // for ($i=0; $i < count($names); $i++) { 
 
-            $name = $names[$i];
-            $scores = $school[$name];
+        //     $name = $names[$i];
+        //     $scores = $school[$name];
 
-            $avg = 0;
+        //     $avg = 0;
 
-            for ($y=0; $y < count($scores); $y++) { 
+        //     for ($y=0; $y < count($scores); $y++) { 
 
-                $score = $scores[$y];
+        //         $score = $scores[$y];
+        //         $avg += $score;
+        //     }
+        //     $avg /= count($scores);
+
+        //     echo '<span>' . $name . ': ' .round($avg, 1) . '/10 </span> <br>';
+        // }
+
+    ?>
+
+    <!--  con il ciclo ForEach -->
+
+    <?php
+            
+        foreach ($school as $student => $scores) {
+
+            foreach ($scores as $score) {
+
                 $avg += $score;
             }
             $avg /= count($scores);
-
-            echo '<span>' . $name . ': ' .round($avg, 1) . '/10 </span> <br>';
+            echo '<span>' . $student . ': ' . round($avg, 1) . '/10 </span> <br>';
         }
 
     ?>

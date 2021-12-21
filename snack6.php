@@ -26,7 +26,6 @@
             font-weight: 600;
             font-size: 30px;
             padding: 15px 0;
-            border: solid 1px #fff;
         }
     </style>
     <?php
@@ -66,23 +65,55 @@
     
     <?php
 
-    for ($i = 0; $i < count($keys); $i++) { 
-        $key = $keys[$i];
-        $value = $db[$key];
+    // for ($i = 0; $i < count($keys); $i++) { 
+    //     $key = $keys[$i];
+    //     $value = $db[$key];
 
-        for ($j = 0; $j < count($value); $j++) { 
+    //     for ($j = 0; $j < count($value); $j++) { 
 
-            if ($key == 'teachers') {
-                echo '<div class="teachers"><span>' . $value[$j]['name'] . ' ' . $value[$j]['lastname'] . '</span></div>';
-            } 
+    //         if ($key == 'teachers') {
+    //             echo '<div class="teachers"><span>' . $value[$j]['name'] . ' ' . $value[$j]['lastname'] . '</span></div>';
+    //         } 
             
-            if ($key == 'pm') {
-                echo '<div class="pm"><span>' . $value[$j]['name'] . ' ' . $value[$j]['lastname'] . '</span></div>';
-            }
-        }
-    }
+    //         if ($key == 'pm') {
+    //             echo '<div class="pm"><span>' . $value[$j]['name'] . ' ' . $value[$j]['lastname'] . '</span></div>';
+    //         }
+    //     }
+    // }
 
-    ?>
+    ?> 
+
+    <!--  con il ciclo Foreach -->
+
+    <div class="teachers">
+        <?php
+            foreach ($db as $key => $teachers) {
+
+                if ($key == 'teachers') {
+                    foreach ($teachers as $teacher) {
+                        {
+                            echo '<span>' . $teacher['name'] . " " . $teacher['lastname']  . '</span>';
+                        }
+                    }
+                }
+            }
+        ?>
+    </div>
+
+    <div class="pm">
+        <?php
+            foreach ($db as $key => $pms) {
+
+                if ($key == 'pm') {
+                    foreach ($pms as $pm) {
+                        {
+                            echo '<span>' . $pm['name'] . " " . $pm['lastname']  . '</span>';
+                        }
+                    }
+                }
+            }
+        ?>
+    </div>
 
 </body>
 </html>
